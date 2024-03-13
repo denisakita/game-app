@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {environment} from "../environments/environment";
+import {MessageService} from "./services/message.service";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   public appFooter: string = environment.appFooter;
 
   constructor(
-    // public messageService:MessageService
+    public messageService:MessageService
   ) {
   }
 }

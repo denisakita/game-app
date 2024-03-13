@@ -1,21 +1,24 @@
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {LeaderboardsComponent} from "./leaderboards.component";
-import {OnlineStatusDirective} from "../../directives/online-status.directive";
-import {SortByGemCountPipe} from "../../pipes/sort-by-gem-count.pipe";
-import {LeaderboardsRoutingModule} from "./leaderboards-routing.module";
+import {NgModule} from '@angular/core';
 
+import {HighScoresComponent} from '../../components/high-scores/high-scores.component';
+import {MostGemsComponent} from '../../components/most-gems/most-gems.component';
+import {OnlineStatusDirective} from '../../directives/online-status.directive';
+import {LeaderboardsRoutingModule} from './leaderboards-routing.module';
+import {LeaderboardsComponent} from './leaderboards.component';
+import {SortByGemCountPipe} from "../../pipes/sort-by-gem-count.pipe";
 
 @NgModule({
   declarations: [
     LeaderboardsComponent,
-
+    MostGemsComponent
   ],
   imports: [
     CommonModule,
+    HighScoresComponent,
     LeaderboardsRoutingModule,
     OnlineStatusDirective,
-    SortByGemCountPipe
+    SortByGemCountPipe,
   ]
 })
 export class LeaderboardsModule {

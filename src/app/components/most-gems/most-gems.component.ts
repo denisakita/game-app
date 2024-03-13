@@ -4,11 +4,11 @@ import { Player } from '../../interfaces/player';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-players',
-  templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  selector: 'app-most-gems',
+  templateUrl: './most-gems.component.html',
+  styleUrls: ['./most-gems.component.css']
 })
-export class PlayersComponent implements OnInit {
+export class MostGemsComponent implements OnInit {
   public players$: Observable<Player[] | undefined> = of(undefined);
 
   constructor(
@@ -17,9 +17,5 @@ export class PlayersComponent implements OnInit {
 
   public ngOnInit(): void {
     this.players$ = this.api.getAllPlayers$();
-  }
-
-  public update(text: string) {
-    this.players$ = this.api.getPlayersByName$(text);
   }
 }

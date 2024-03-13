@@ -1,28 +1,30 @@
+import {CommonModule} from '@angular/common';
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {RouterLinkWithHref} from "@angular/router";
-import {Observable, of} from "rxjs";
-import {ApiService} from "../../services/api.service";
-import {OnlineStatusDirective} from "../../directives/online-status.directive";
+import {RouterLinkWithHref} from '@angular/router';
+import {Observable, of} from 'rxjs';
+import {OnlineStatusDirective} from '../../directives/online-status.directive';
+import {Player} from '../../interfaces/player';
+import {ApiService} from '../../services/api.service';
+import {SortByScoreModule} from "../../pipes/sort-by-score.module";
 
 @Component({
   selector: 'app-high-scores',
-  standalone: true,
-  imports: [CommonModule, OnlineStatusDirective,RouterLinkWithHref,],
   templateUrl: './high-scores.component.html',
-  styleUrl: './high-scores.component.css',
-  changeDetection:ChangeDetectionStrategy.OnPush
+  styleUrls: ['./high-scores.component.css'],
+  standalone: true,
+  imports: [CommonModule, OnlineStatusDirective, RouterLinkWithHref, SortByScoreModule],
+  providers: [],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HighScoresComponent implements OnInit {
-  public players$: Observable<Player[] | undefined> = of(undefined)
+  public players$: Observable<Player[] | undefined> = of(undefined);
 
   constructor(
-    private api: ApiService,
+    private api: ApiService
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.players$ = this.api.getAllPlayers$();
   }
-
 }

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import {Player} from "../interfaces/player";
 
 @Pipe({
   name: 'sortByScore',
@@ -7,7 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SortByScorePipe implements PipeTransform {
 
   transform(players: Player[]): Player[] {
-    return players.sort((a,b) => b.sore - a.score);
+    return players.sort((a,b) => b.score - a.score);
   }
 
 }

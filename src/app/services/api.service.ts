@@ -1,6 +1,7 @@
+import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {delay, map} from "rxjs";
+import {delay, map} from 'rxjs';
+import {Player} from '../interfaces/player';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,7 @@ export class ApiService {
   }
 
   public getAllPlayers$() {
-    return this.http.get<Player[]>('/assets/moks/players.json').pipe(delay(1000));
-
+    return this.http.get<Player[]>('/assets/mocks/players.json').pipe(delay(1000));
   }
 
   public getPlayerById$(id: string) {
@@ -25,7 +25,7 @@ export class ApiService {
 
   public getPlayersByName$(text: string) {
     return this.getAllPlayers$().pipe(
-      map(players => players.find(player => player.name.toLowerCase().includes(text.toLowerCase())))
+      map(players => players.filter(player => player.name.toLowerCase().includes(text.toLowerCase())))
     );
   }
 }
