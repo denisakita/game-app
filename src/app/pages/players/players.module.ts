@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import { OnlineStatusDirective } from '../../directives/online-status.directive';
-import { PlayersRoutingModule } from './players-routing.module';
-import { PlayersComponent } from './players.component';
+import {OnlineStatusDirective} from '../../directives/online-status.directive';
+import {PlayersRoutingModule} from './players-routing.module';
+import {PlayersComponent} from './players.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { PlayersComponent } from './players.component';
   imports: [
     CommonModule,
     OnlineStatusDirective,
-    PlayersRoutingModule
+    PlayersRoutingModule,
   ]
 })
-export class PlayersModule { }
+export class PlayersModule {
+}

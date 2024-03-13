@@ -1,12 +1,16 @@
 import {NgModule} from '@angular/core';
-import {AppComponent} from "./app.component";
-import {BrowserModule} from "@angular/platform-browser";
-import {CommonModule} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
-import {AppRoutingModule} from "./app-routing.module";
+import {BrowserModule} from '@angular/platform-browser';
+
+import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -17,6 +21,5 @@ import {AppRoutingModule} from "./app-routing.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-
 export class AppModule {
 }

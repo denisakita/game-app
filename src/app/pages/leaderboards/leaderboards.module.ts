@@ -7,6 +7,7 @@ import {OnlineStatusDirective} from '../../directives/online-status.directive';
 import {LeaderboardsRoutingModule} from './leaderboards-routing.module';
 import {LeaderboardsComponent} from './leaderboards.component';
 import {SortByGemCountPipe} from "../../pipes/sort-by-gem-count.pipe";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
