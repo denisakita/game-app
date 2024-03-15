@@ -1,8 +1,8 @@
-import {computed, effect, Injectable, signal} from '@angular/core';
-import {AnalyticsService} from "./analytics.service";
-import {HttpClient} from "@angular/common/http";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-import {Message} from "../interfaces/message";
+import { HttpClient } from '@angular/common/http';
+import { Injectable, computed, effect, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Message } from '../interfaces/message';
+import { AnalyticsService } from './analytics.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class MessageService {
 
   public count = computed(() => {
     return this.unread().length;
-  })
+  });
 
   constructor(
     private analytics: AnalyticsService,
@@ -23,7 +23,7 @@ export class MessageService {
     });
 
     this.http
-      .get<Message[]>('assets/mocks/messages.json')
+      .get<Message[]>('/assets/mocks/messages.json')
       .pipe(takeUntilDestroyed())
       .subscribe({
         next: items => this.unread.set(items)
@@ -32,7 +32,7 @@ export class MessageService {
 
   public delete(selected: Message) {
     this.unread.update(items => {
-      return items.filter((items) => items.id !== selected.id);
-    })
+      return items.filter((item) => item.id !== selected.id);
+    });
   }
 }
