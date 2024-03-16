@@ -4,13 +4,11 @@ import { SortByScorePipe } from './sort-by-score.pipe';
 
 @NgModule({
   declarations: [
-    SortByScorePipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    SortByScorePipe
   ]
 })
 export class SortByScoreModule { }
