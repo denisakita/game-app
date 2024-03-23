@@ -1,22 +1,36 @@
 :root {
-  /* https://getbootstrap.com/docs/5.3/customize/css-variables/ */
-  --bs-body-bg: #53777A;
-  --bs-body-color: #ECD078;
+  /* Color Palette */
+  --primary-color: #000000;
+  --secondary-color: #14213D;
+  --accent-color: #FCA311;
+  --tertiary-color: #E5E5E5;
+  --quaternary-color: #FFFFFF;
+
+  /* Background and Text Colors */
+  --bs-body-bg: var(--primary-color);
+  --bs-body-color: var(--accent-color);
+
+  /* Font */
   --bs-body-font-family: 'Oswald', sans-serif;
   --bs-body-font-size: 1.4rem;
-  --bs-link-color: var(--bs-body-color);
+
+  /* Links */
+  --bs-link-color: var(--secondary-color);
 }
 
 .nav-pills {
-  --bs-nav-pills-link-active-color: var(--bs-body-bg);
+  /* Nav Pills */
+  --bs-nav-pills-link-active-color: var(--secondary-color);
   --bs-nav-pills-link-active-bg: var(--bs-body-color);
 }
 
 .list-group {
-  --bs-list-group-bg: transparent;
+  /* List Group */
+  --bs-list-group-bg: var(--quaternary-color);
 }
 
 .list-group-item {
-  --bs-list-group-border-color: var(--bs-body-color);
+  /* List Group Item */
+  --bs-list-group-border-color: var(--accent-color);
   --bs-list-group-color: var(--bs-body-color);
 }

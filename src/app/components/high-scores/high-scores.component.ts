@@ -6,13 +6,14 @@ import {OnlineStatusDirective} from '../../directives/online-status.directive';
 import {Player} from '../../interfaces/player';
 import {ApiService} from '../../services/api.service';
 import {SortByScoreModule} from "../../pipes/sort-by-score.module";
+import {SortByScorePipe} from "../../pipes/sort-by-score.pipe";
 
 @Component({
   selector: 'app-high-scores',
   templateUrl: './high-scores.component.html',
   styleUrls: ['./high-scores.component.css'],
   standalone: true,
-  imports: [CommonModule, OnlineStatusDirective, RouterLinkWithHref, SortByScoreModule],
+  imports: [CommonModule, OnlineStatusDirective, RouterLinkWithHref, SortByScoreModule, SortByScorePipe],
   providers: [],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
